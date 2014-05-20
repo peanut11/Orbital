@@ -31,41 +31,70 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#">Overview</a></li>
-					<li><a href="#">Reports</a></li>
-					<li><a href="#">Analytics</a></li>
-					<li><a href="#">Export</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item</a></li>
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-					<li><a href="">More navigation</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-				<h1>Welcome</h1>
-				<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried.</p>
-
-				<p>Thus, our mission is to unearth them!</p>
-
-				<p>Start searching for stories now! <button type="button" class="btn btn-primary">Start</button></p>
-			</div>
-			<div class="text-right col-md-3">
-				<h2>hi</h2>
-				<p>hello hello hello bla bla bla bla bla bl</p>
-				<p>I don't have anything much to say anymore. can you please stop reading??? :(:(:(</p>
-				<p>HELLO HELLO</p>
-			</div>
+					<li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+						Settings <i class="glyphicon glyphicon-chevron-down"></i>
+					</a>
+					<ul class="list-unstyled collapse in" id="userMenu">
+						<li> <a href="#"> Home</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-cog"></i> Options</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-flag"></i> Transactions</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+					</ul>
+				</li>
+				<li class="active"><a href="#">Overview</a></li>
+				<li><a href="#">Reports</a></li>
+				<li><a href="#">Analytics</a></li>
+				<li><a href="#">Export</a></li>
+			</ul>
+			<ul class="nav nav-sidebar">
+				<li><a href="">Nav item</a></li>
+				<li><a href="">Nav item again</a></li>
+				<li><a href="">One more nav</a></li>
+				<li><a href="">Another nav item</a></li>
+				<li><a href="">More navigation</a></li>
+			</ul>
+			<ul class="nav nav-sidebar">
+				<li><a href="">Nav item again</a></li>
+				<li><a href="">One more nav</a></li>
+				<li><a href="">Another nav item</a></li>
+			</ul>
 		</div>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script src = "js/bootstrap.js"></script>
-	</body>
-	</html>
+		<div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
+			<h1>Welcome</h1>
+			<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried.</p>
+
+			<p>Thus, our mission is to unearth them!</p>
+
+			<p>Start searching for stories now! <button type="button" class="btn btn-primary">Start</button></p>
+		</div>
+		<div class="text-right col-md-3">
+			<h2>hi</h2>
+			<p>hello hello hello bla bla bla bla bla bl</p>
+			<p>I don't have anything much to say anymore. can you please stop reading??? :(:(:(</p>
+			<p>HELLO HELLO</p>
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
+
+	$(document).ready(function() {
+
+		$(".alert").addClass("in").fadeOut(4500);
+
+		/* swap open/close side menu icons */
+		$('[data-toggle=collapse]').click(function(){
+  	// toggle icon
+  	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+  });
+
+	});
+
+	</script>
+</body>
+</html>
