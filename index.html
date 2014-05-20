@@ -3,56 +3,54 @@
 <html>
 <head>
 	<title>UnearthWorks</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
 	
-	<style type="text/css">
-	body {
-		background-color: #8ddaf5;
-		
-	}
-
-	.container{
-		margin: 10px auto;
-		max-width: 760px;
-		padding: 10em;
-	}
-
-	.logo {
-		color: #90a150;
-		float: left;
-		font-family: 'Pacifico';
-		font-size: 5em;
-		
-	}
-	#content {
-		clear: both;
-	}
-	nav ul li{
-		display: inline-block;
-		margin-left: 1em;
-		float: right;
-		font-size: 2em;
-		padding-top: 2em;
-	}
-
-	nav {
-		float: right;
-	}
-	</style>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 	<div id="container">
 		<header>
 			<div class = "logo" >UnearthWorks</div>
-			<nav>
-				<ul>
-					<li ><a href="http://google.com">beeee</a></li>
-					<li ><a href="#hi">hi</a></li>
-					<li >baaaa</li>
-				</ul>	
-			</nav>
+			<div class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Project name</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="./">Default</a></li>
+							<li><a href="../navbar-static-top/">Static top</a></li>
+							<li><a href="../navbar-fixed-top/">Fixed top</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</div>
 		</header>	
 
 		<div id="content">
@@ -92,5 +90,8 @@
 			<h6>BYEEE</h6>
 		</div>
 	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src = "js/bootstrap.js"></script>
 </body>
 </html>
