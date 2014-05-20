@@ -6,88 +6,68 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
-	
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	
+	
+	
 </head>
-
 <body>
-	<div id="container">
+	<div class="container-fluid">
 		<header>
-			<div class = "logo" >UnearthWorks</div>
 			<div class="navbar navbar-default" role="navigation">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">Project name</a>
-					</div>
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li class="divider"></li>
-									<li class="dropdown-header">Nav header</li>
-									<li><a href="#">Separated link</a></li>
-									<li><a href="#">One more separated link</a></li>
-								</ul>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="./">Default</a></li>
-							<li><a href="../navbar-static-top/">Static top</a></li>
-							<li><a href="../navbar-fixed-top/">Fixed top</a></li>
-						</ul>
-					</div><!--/.nav-collapse -->
-				</div><!--/.container-fluid -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">UnearthWorks</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Drama</a></li>
+								<li><a href="#">Sci-fi</a></li>
+								<li><a href="#">Fluff</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div><!--/.nav-collapse -->
 			</div>
 		</header>	
 
-		<div id="content">
-			<div>
-				<h1 style="text-align: center">HELLO EVERYONE</h1>
-				<p>this is a <em>lame</em> website that <strong><em>doesn't </strong></em>provide any useful information. please have some fun here!!!</p>
-				<img src="http://t.co/3evg9hPOrm">
+		<div class="content">
+			<div class="jumbotron text-left">
+				<h1>Welcome</h1>
+				<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried.</p>
 
+				<p>Thus, our mission is to unearth them!</p>
+				
+				<p>Start searching for stories now! <button type="button" class="btn btn-primary">Start</button></p>
 			</div>
-			<div id = "hi">
+			<div class="text-right">
 				<h2>hi</h2>
 				<p>hello hello hello bla bla bla bla bla bl</p>
 				<p>I don't have anything much to say anymore. can you please stop reading??? :(:(:(</p>
 				<p>HELLO HELLO</p>
 			</div>
-			<div>
-				<form action = "http://google.com/search">
-					<label>
-						Search Query: 
-						<input name="q" value = "orbital">
-					</label>
-					<label>
-						Email: 
-						<input name = "email" placeholder = "type your email">
-					</label>
-					<label>
-						Comments: 
-						<textarea required name ="comments" rows = "10" column = "50" placeholder="comments here!"></textarea>
-					</label>
-					<input type = "submit" value = "GO!">
-
-				</form>
-			</div>
-			<h3>how are youuu</h3>
-			<h4>boooo</h4>
-			<h5>HEYYY</h5>
-			<h6>BYEEE</h6>
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
