@@ -1,4 +1,3 @@
-HELLOEHLLOE
 Orbital
 =======
 Overview: Our project aims to provide a platform which systematically organizes online novels and ebooks so that users can easily search and access them. We are aiming for Vostok.
