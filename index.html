@@ -8,9 +8,28 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
 </head>
 
 <body>
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : 791636197521808,
+			xfbml      : true,
+			version    : 'v2.0'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<div class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -69,67 +88,74 @@
 			<div class="row">
 				<div class="col-md-8">
 					<h1>Welcome</h1>
-					<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried.</p>
+					<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried. </p>
 
-					<p>Thus, our mission is to unearth them!</p>
+					<div
+					class="fb-like"
+					data-send="true"
+					data-width="450"
+					data-show-faces="true">
+				</div>
 
-					<p>Start searching for stories now! <button type="button" class="btn btn-primary" href="#">Get Started</button></p>
-				</div>
-				<div class="text-left col-md-3">
-					<div class="panel" id="Hall-of-Fame">
-						<a href="#" class="panel-title">Hall of Fame</a>
-						<ol>
-							<li><a href="">Top Story</a></li>
-							<li><a href="">One more nav</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-							<li><a href="">One more nav</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-							<li><a href="">One more nav</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-						</ol>
-					</div>
-					<div class="panel" id="Hall-of-Hell">
-						<a href="#" class="panel-title">Hall of Hell</a>
-						<ol>
-							<li><a href="">Most Horrible Story</a></li>
-							<li><a href="">Second most Horrible</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-							<li><a href="">One more nav</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-							<li><a href="">One more nav</a></li>
-							<li><a href="">Another nav item</a></li>
-							<li></li>
-						</ol>
-					</div>
-					
-				</div>
+				<p>Thus, our mission is to unearth them!</p>
+
+				<p>Start searching for stories now! <button type="button" class="btn btn-primary" href="#">Get Started</button></p>
 			</div>
-			
+			<div class="text-left col-md-3">
+				<div class="panel" id="Hall-of-Fame">
+					<a href="#" class="panel-title">Hall of Fame</a>
+					<ol>
+						<li><a href="">Top Story</a></li>
+						<li><a href="">One more nav</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+						<li><a href="">One more nav</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+						<li><a href="">One more nav</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+					</ol>
+				</div>
+				<div class="panel" id="Hall-of-Hell">
+					<a href="#" class="panel-title">Hall of Hell</a>
+					<ol>
+						<li><a href="">Most Horrible Story</a></li>
+						<li><a href="">Second most Horrible</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+						<li><a href="">One more nav</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+						<li><a href="">One more nav</a></li>
+						<li><a href="">Another nav item</a></li>
+						<li></li>
+					</ol>
+				</div>
 
+			</div>
 		</div>
+
+
 	</div>
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script type='text/javascript'>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type='text/javascript'>
 
-	$(document).ready(function() {
+$(document).ready(function() {
 
-		$(".alert").addClass("in").fadeOut(4500);
+	$(".alert").addClass("in").fadeOut(4500);
 
-		/* swap open/close side menu icons */
-		$('[data-toggle=collapse]').click(function(){
+	/* swap open/close side menu icons */
+	$('[data-toggle=collapse]').click(function(){
   	// toggle icon
   	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
   });
 
-	});
+});
 
-	</script>
+</script>
 </body>
 </html>
