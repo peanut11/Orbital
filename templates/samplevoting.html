@@ -1,0 +1,76 @@
+<html>
+<head>
+	<link rel="icon" type="image/png"href="http://www.cap.org.pe/cap/images/stories/icon_web1/1326926743_191.png" />
+	<title>UnearthWorks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">UnearthWorks</a>
+		</div>
+		<div class="navbar-collapse collapse ">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+				<li><a href="#">Log in</a></li>
+				<li><a href="#">Sign Up</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="">Stories</a></li>
+					<li><a href="#">Favourites</a></li>
+					<li><a href="#">Votes</a></li>
+					<li><a href="#">History</a></li>
+					<li><a href="#">Report</a></li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<h1>Sample Voting</h1>
+			
+			<iframe src="http://voting.first-jump.com/init.php?a=g&g=1403626603740&m=1&n=5&s=64&f=3.png&f_a=&f_b=&f_c=" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" frameborder="0" height="84" scrolling="no" width="323"></iframe>
+
+		</div>
+		
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
+
+	$(document).ready(function() {
+
+		$(".alert").addClass("in").fadeOut(4500);
+
+		/* swap open/close side menu icons */
+		$('[data-toggle=collapse]').click(function(){
+  	// toggle icon
+  	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+  });
+
+	});
+
+	</script>
+</body>
+</html>
