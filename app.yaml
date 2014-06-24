@@ -6,11 +6,20 @@ threadsafe: true
 
 handlers:
 
-- url: /css
-  static_dir: css
+- url: /stylesheets
+  static_dir: stylesheets
 
+- url: /images
+  static_dir: images
+
+# Handler for front page
+- url: /
+  script: front.application
+
+# All other pages that require login
 - url: /.*
-  script: Orbital.application
+  script: unearthlogin.application
+  login: required
 
 libraries:
 - name: webapp2
