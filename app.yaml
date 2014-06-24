@@ -13,13 +13,13 @@ handlers:
   static_dir: images
 
 # Handler for front page
-- url: /
+- url: /.*
   script: front.application
 
 # All other pages that require login
-- url: /.*
-  script: unearthlogin.application
-  login: required
+# - url: /.*
+#  script: unearthlogin.application
+#  login: required
 
 libraries:
 - name: webapp2
