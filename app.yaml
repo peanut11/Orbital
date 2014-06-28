@@ -1,4 +1,4 @@
-application: your-app-id
+application: pristine-glass-607
 version: 1
 runtime: python27
 api_version: 1
@@ -12,14 +12,12 @@ handlers:
 - url: /images
   static_dir: images
 
-# Handler for front page
+- url: /login/.*
+  script: unearthlogin.app
+  login: required
+
 - url: /.*
   script: front.application
-
-# All other pages that require login
-# - url: /.*
-#  script: unearthlogin.application
-#  login: required
 
 libraries:
 - name: webapp2
