@@ -12,12 +12,16 @@ handlers:
 - url: /images
   static_dir: images
 
+- url: /admin/.*
+  script: unearth.app
+  login: restricted
+
 - url: /login/.*
-  script: unearthlogin.app
+  script: unearth.app
   login: required
 
 - url: /.*
-  script: front.application
+  script: unearth.app
 
 libraries:
 - name: webapp2

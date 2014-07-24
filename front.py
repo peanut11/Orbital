@@ -1,12 +1,26 @@
 import os
 import jinja2
 import webapp2
+import datetime
+
+from google.appengine.ext import db
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + '/templates'),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class Story(db.Model):
+	title = db.StringProperty()
+	author = db.StringProperty()
+	url = db.StringProperty()
+	genre = db.StringProperty()
+	rating = db.FloatProperty()
+	status = db.StringProperty()
+	characters = db.TextProperty()
+	description = db.TextProperty()
+	editor = db.TextProperty()
+	date = db.DateTimeProperty()
 
 class MainPage(webapp2.RequestHandler):
 
