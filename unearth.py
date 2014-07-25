@@ -87,6 +87,7 @@ class FaqUser(webapp2.RequestHandler):
             self.response.out.write(template.render(template_values))
         else:
             self.redirect(self.request.host_url)
+            
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/aboutus', AboutUs),
