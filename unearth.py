@@ -50,12 +50,17 @@ class MainPageUser(webapp2.RequestHandler):
 
     def get(self):
         user = users.get_current_user()
+        
         if user:  # signed in already
             template_values = {
                 'nickname': users.get_current_user().nickname(),
                 'logout': users.create_logout_url(self.request.host_url),
             }
             template = JINJA_ENVIRONMENT.get_template('indexlogin.html')
+            
+            if users.is_current_user_admin():
+                template = JINJA_ENVIRONMENT.get_template('addstory.html')
+            
             self.response.out.write(template.render(template_values))
         else:
             self.redirect(self.request.host_url)
@@ -87,7 +92,7 @@ class FaqUser(webapp2.RequestHandler):
             self.response.out.write(template.render(template_values))
         else:
             self.redirect(self.request.host_url)
-            
+    
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/aboutus', AboutUs),

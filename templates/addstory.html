@@ -33,7 +33,16 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
-				<p><a href="/login/">Log in with <img src="../images/google.png">  to view sidebar. </a></p>
+				<ul class="nav nav-sidebar">
+					<span> Welcome, {{ nickname }}. </span>
+					<li><a href="/login/">Home</a></li>
+					<li><a href="genre.html">Stories</a></li>
+					<li><a href="#">Favourites</a></li>
+					<li><a href="#">Votes</a></li>
+					<li><a href="#">History</a></li>
+					<li><a href="#">Report</a></li>
+					<li><a href="{{  logout  }}">Logout</a></li>
+				</ul>
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1>Add new story</h1>

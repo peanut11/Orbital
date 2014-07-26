@@ -15,10 +15,6 @@ handlers:
 - url: /login/.*
   script: unearth.app
   login: required
-  
-- url: /admin/.*
-  script: unearth.app
-  login: admin
 
 - url: /.*
   script: unearth.app
