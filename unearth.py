@@ -17,7 +17,7 @@ class Story(db.Model):
     author = db.StringProperty()
     url = db.StringProperty()
     genre = db.StringProperty()
-    rating = db.FloatProperty()
+    rating = db.StringProperty()
     status = db.StringProperty()
     characters = db.TextProperty()
     description = db.TextProperty()
@@ -77,7 +77,7 @@ class MainPageUser(webapp2.RequestHandler):
                     description=self.request.get('desc'),
                     editor=self.request.get('editor')
                     )
-
+        self.story.put()
 
 class AboutUsUser(webapp2.RequestHandler):
 
