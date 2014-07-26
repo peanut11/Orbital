@@ -25,7 +25,7 @@
 		</div>
 		<div class="navbar-collapse collapse ">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="">About Us</a></li>
+				<li><a href="/login/aboutus">About Us</a></li>
 				<li><a href="/login/faq">FAQ</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
@@ -36,34 +36,34 @@
 				<ul class="nav nav-sidebar">
 					<span> Welcome, {{ nickname }}. </span>
 					<li><a href="/login/">Home</a></li>
-					<li><a href="/login/genre">Stories</a></li>
+					<li><a href="">Stories</a></li>
 					<li><a href="{{  logout  }}">Logout</a></li>
 				</ul>
 			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1>About us</h1>
-				<p>Nowadays, the online writing community is getting increasingly popular. There are many websites providing a platform for writers to write and share, but no websites that compile and organizes these precious resources online. Hence, many great works are being buried.</p>
-				<p>Thus, our mission is to unearth them!</p>
-				<p>Join the UnearthWorks community now. <button type="button" class="btn btn-primary" href="#">Sign Up</button></p>
-			</div>
 		</div>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script type='text/javascript'>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<h1>Genre</h1>
 
-		$(document).ready(function() {
 
-			$(".alert").addClass("in").fadeOut(4500);
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
 
-			/* swap open/close side menu icons */
-			$('[data-toggle=collapse]').click(function(){
+	$(document).ready(function() {
+
+		$(".alert").addClass("in").fadeOut(4500);
+
+		/* swap open/close side menu icons */
+		$('[data-toggle=collapse]').click(function(){
   	// toggle icon
   	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
   });
 
-		});
+	});
 
-		</script>
-	</body>
-	</html>
+	</script>
+</body>
+</html>
