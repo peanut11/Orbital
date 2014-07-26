@@ -1,0 +1,81 @@
+@@ -0,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png"href="http://www.cap.org.pe/cap/images/stories/icon_web1/1326926743_191.png" />
+	<title>UnearthWorks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" href="../stylesheets/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/login/">UnearthWorks</a>
+		</div>
+		<div class="navbar-collapse collapse ">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/login/aboutus">About Us</a></li>
+				<li><a href="/login/faq">FAQ</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<span> Welcome, {{ nickname }}. </span>
+					<li><a href="/login/">Home</a></li>
+					<li><a href="genre.html">Stories</a></li>
+					<li><a href="#">Favourites</a></li>
+					<li><a href="#">Votes</a></li>
+					<li><a href="#">History</a></li>
+					<li><a href="#">Report</a></li>
+					<li><a href="{{  logout  }}">Logout</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 style="margin-left: 40px;"><span style="font-family:georgia;"><span style="font-family:arial;"><u><a href="http://www.asianfanfics.com/story/view/36171/kyuhyun-it-s-been-hard-on-you-jonghyun-kyuhyun-leeteuk-seniority-superjunior-supermanager" rel="nofollow"><span style="color:#000000;">Kyuhyun...it&#39;s been hard on you</span></a></u></span><span style="color:#000000;"><span style="font-family:arial;">&nbsp; </span>&nbsp;<span style="font-family:arial;"><span style="font-size:18px;">ratings: </span></span></span><span style="color:#FF0000;"><span style="font-family:arial;"><span style="font-size:18px;">4.7/5</span></span></span><span style="color:#00FF00;"><span style="font-family:arial;"><span style="font-size:18px;"> </span></span></span><span style="color:#000000;"><span style="font-family:arial;"><span style="font-size:18px;">&nbsp;<em><span style="font-size:12px;">(completed)</span></em> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></span></span><span style="color:#A9A9A9;"><span style="font-family:arial;"><span style="font-size:18px;">&nbsp;Author: janie6789</span></span></span></span><br />
+				<br />
+				<span style="font-size:14px;"><span style="font-family:arial;"><span style="color:#000000;">Kyuhyun has had to go through an impossible amount of hardships - from being the newcomer and youngest in a huge band in a culture that emphasizes hierarchy, to the health problems he&#39;s had. &nbsp;This story will fictionalize everything that he&#39;s had to go through since his training days at SM.</span><br />
+				<br />
+				<span style="color:#00cc99;"><em>Editor&#39;s Note:&nbsp;</em></span></span></span><br />
+				<span style="color:#00cc99;"><em><span style="font-family:arial;"><span id="docs-internal-guid-f1bc78c9-6808-e52c-e2a9-da127bde0415"><span style="font-size: 15px; vertical-align: baseline; white-space: pre-wrap;">The catch of this story is that it&rsquo;s so realistic that it will immediately capture the readers&rsquo; hearts. </span></span></span></em></span><br />
+				<br />
+				<span style="font-size: 14px;"><span style="font-family: arial;"><span style="color: rgb(0, 0, 0);">Characters: Kyuhyun, SuperJunior, Manager, SM trainees</span></span></span><br />
+				&nbsp;</h1>
+
+
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type='text/javascript'>
+
+		$(document).ready(function() {
+
+			$(".alert").addClass("in").fadeOut(4500);
+
+			/* swap open/close side menu icons */
+			$('[data-toggle=collapse]').click(function(){
+  	// toggle icon
+  	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+  });
+
+		});
+
+		</script>
+	</body>
+	</html>
