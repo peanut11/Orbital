@@ -7,9 +7,15 @@ from unearth import Story
 from google.appengine.ext import db
 from google.appengine.api import users
 
+
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + '/templates'),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
 class StoryPage(webapp2.RequestHandler):
 
-    def get(self):
+    def get(self, post_id):
         user = users.get_current_user()
         if user:  # signed in already
     		key = post_id
@@ -23,7 +29,7 @@ class StoryPage(webapp2.RequestHandler):
             'editor': story.editor,
             'status': story.status,
             'link': story.link,
-            'characters': characters,
+            'characters': story.characters,
             'nickname': users.get_current_user().nickname(),
             'logout': users.create_logout_url(self.request.host_url),
             }
