@@ -12,10 +12,6 @@ handlers:
 - url: /images
   static_dir: images
 
-- url: /login/.*
-  script: unearth.app
-  login: required
-
 - url: /genre/stories/.*
   script: stories.app
   login: required

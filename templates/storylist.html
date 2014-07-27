@@ -54,19 +54,18 @@
 		</div><!--/.nav-collapse -->
 	</div>	
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
+		<div class="col-sm-3 col-md-2 sidebar">
 				{% if user %}
 				<ul class="nav nav-sidebar">
 					<span> Welcome, {{ nickname }}. </span>
-					<li><a href="">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="/genre">Stories</a></li>
 					<li><a href="{{  logout  }}">Logout</a></li>
 				</ul>
 				{% else %}
-					<form action="/signin/">
-						<input type="submit" value="Login to Google">
-					</form>
+					<p>To view the sidebar,</p>
+					<a href="/signin/"><img src="../images/google_signin.png"></a>
+					
 				{% endif %}
 			</div>
 		</div>
@@ -80,16 +79,10 @@
 						<input id="submitlink" type="submit" value="{{  story.title  }}">
 					</h3>
 				</form>
-				<ul>
-					<li>{{  story.author  }}</li>
-					<li>{{  story.rating}}</li>
-					<li>{{  story.description  }}</li>
-					<li>{{  story.editor  }}</li>
-					<li>{{  story.link  }}</li>
-					<li>{{  story.status  }}</li>
-					<li>{{  story.genre  }}</li>
-					<li>{{  story.characters  }}</li>
-				</ul>
+				<span style="color:#000000;"><span style="font-family:arial;">&nbsp; </span>&nbsp;<span style="font-family:arial;"><span style="font-size:18px;">Ratings: </span></span></span><span style="color:#FF0000;"><span style="font-family:arial;"><span style="font-size:18px;">{{  story.rating  }}</span></span></span><span style="color:#00FF00;"><span style="font-family:arial;"><span style="font-size:18px;"> </span></span></span><span style="color:#000000;"><span style="font-family:arial;"><span style="font-size:18px;">&nbsp;<em><span style="font-size:12px;">({{  story.status  }})</span></em> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></span></span><span style="color:#A9A9A9;"><span style="font-family:arial;"><span style="font-size:18px;">&nbsp;Author: {{  story.author  }}</span></span></span></span><br />
+					<br />
+					<span style="font-size:14px;"><span style="font-family:arial;"><span style="color:#000000;">{{  story.description  }}</span><br />
+					<br />
 			</div>
 			{% endfor %}
 		</div>
