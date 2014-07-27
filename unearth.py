@@ -75,7 +75,8 @@ class MainPageUser(webapp2.RequestHandler):
                     characters=self.request.get('characters'),
                     description=self.request.get('desc'),
                     editor=self.request.get('editor'),
-                    url=self.request.get('url')
+                    url=self.request.get('url'),
+                    status=self.request.get('status')
                     )
         self.story.put()
         self.redirect("/login/")
@@ -132,24 +133,12 @@ class GenrePageUser(webapp2.RequestHandler):
             self.response.out.write(template.render(template_values))
         else:
             self.redirect(self.request.host_url)
-class StoryList(webapp2.RequestHandler):
 
-    def get(self):
-        query = Story.all()
-        query.order("-rating")
-
-        template_values = {
-        'query': query
-        }            
-
-        template = JINJA_ENVIRONMENT.get_template('storylist.html')
-        self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                 ('/aboutus', AboutUs),
                                ('/faq', Faq),
                                ('/genre', GenrePage),
-                               ('/storylist', StoryList),
                                ('/login/', MainPageUser),
                                 ('/login/aboutus', AboutUsUser),
                                 ('/login/faq', FaqUser),

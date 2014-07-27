@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<style type="text/css">
+	input#submitlink {
+		background: transparent;
+		border: 0;
+		cursor:pointer;
+		margin: 0;
+		padding: 0;
+		text-decoration: underline;
+	}
+
+	input#submitlink:visited {
+		color: #505abc;
+	}
+
+	input#submitlink:hover {
+		text-decoration: none;
+	}
+
+	input#submitlink:active {
+		color: #12eb87;
+	}
+	</style>
 	<link rel="icon" type="image/png"href="http://www.cap.org.pe/cap/images/stories/icon_web1/1326926743_191.png" />
 	<title>UnearthWorks</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,19 +62,24 @@
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<h1>{{  genre  }} stories</h1>
 			{% for story in query %}
-				<div>
-					<a href="/stories{{  story.url  }}"><h3>{{  story.title  }}</h3></a>
-					<ul>
-						<li>{{  story.author  }}</li>
-						<li>{{  story.rating}}</li>
-						<li>{{  story.desc  }}</li>
-						<li>{{  story.editor  }}</li>
-						<li>{{  story.link  }}</li>
-						<li>{{  story.status  }}</li>
-						<li>{{  story.genre  }}</li>
-						<li>{{  story.characters  }}</li>
-					</ul>
-				</div>
+			<div>
+				<form action="/genre/submit" method="post">
+					<h3>
+						<input type="hidden" name="k" value="{{  story.key()  }}">
+						<input id="submitlink" type="submit" value="{{  story.title  }}">
+					</h3>
+				</form>
+				<ul>
+					<li>{{  story.author  }}</li>
+					<li>{{  story.rating}}</li>
+					<li>{{  story.desc  }}</li>
+					<li>{{  story.editor  }}</li>
+					<li>{{  story.link  }}</li>
+					<li>{{  story.status  }}</li>
+					<li>{{  story.genre  }}</li>
+					<li>{{  story.characters  }}</li>
+				</ul>
+			</div>
 			{% endfor %}
 		</div>
 	</div>

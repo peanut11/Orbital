@@ -13,6 +13,17 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 
+class SubmitHandler(webapp2.RequestHandler):
+
+	def get(self):
+		self.response.write("Wait while we refer you")
+
+	
+	def post(self):
+		key = self.request.get("k")
+		self.redirect('/genre/stories/%s' % key)
+
+
 
 class Comedy(webapp2.RequestHandler):
 	
@@ -30,6 +41,9 @@ class Comedy(webapp2.RequestHandler):
 
 		template = JINJA_ENVIRONMENT.get_template('storylist.html')
 		self.response.write(template.render(template_values))
+
+	def post(self):
+		title = self.request.get("title")
 
 class SliceOfLife(webapp2.RequestHandler):
 
@@ -66,7 +80,24 @@ class Romance(webapp2.RequestHandler):
 		self.response.write(template.render(template_values))
 
 
-application = webapp2.WSGIApplication([('/genre/comedy', Comedy),
-							('/genre/slice-of-life', SliceOfLife),
-							('/genre/romance', Romance)],
+class Ratings(webapp2.RequestHandler):
+
+	def get(self):
+		query = Story.all()
+		query.order("-rating")
+
+		template_values = {
+		'query': query,
+		'genre': "All"
+		}          
+
+		template = JINJA_ENVIRONMENT.get_template('storylist.html')
+		self.response.write(template.render(template_values))
+
+
+application = webapp2.WSGIApplication([('/genre/ratings', Ratings),
+									   ('/genre/comedy', Comedy),
+									   ('/genre/submit', SubmitHandler),
+				 		   			   ('/genre/slice-of-life', SliceOfLife),
+								   	   ('/genre/romance', Romance)],
 							debug=True)  
