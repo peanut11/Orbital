@@ -40,13 +40,13 @@
 			<h1>All stories</h1>
 			{% for story in query %}
 				<div>
-					<h3>{{  story.title  }}</h3>
+					<a href="/stories{{  story.url  }}"><h3>{{  story.title  }}</h3></a>
 					<ul>
 						<li>{{  story.author  }}</li>
 						<li>{{  story.rating}}</li>
 						<li>{{  story.desc  }}</li>
 						<li>{{  story.editor  }}</li>
-						<li>{{  story.url  }}</li>
+						<li>{{  story.link  }}</li>
 						<li>{{  story.status  }}</li>
 						<li>{{  story.genre  }}</li>
 						<li>{{  story.characters  }}</li>

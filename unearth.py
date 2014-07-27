@@ -2,7 +2,6 @@ import urllib
 import webapp2
 import jinja2
 import os
-import datetime
 
 from google.appengine.ext import db
 from google.appengine.api import users
@@ -15,13 +14,14 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class Story(db.Model):
     title = db.StringProperty(indexed=True)
     author = db.StringProperty(indexed=False)
-    url = db.StringProperty(indexed=False)
+    link = db.StringProperty(indexed=False)
     genre = db.StringProperty(indexed=True)
     rating = db.StringProperty(indexed=True)
     status = db.StringProperty(indexed=True)
-    characters = db.TextProperty(indexed=False, multiline=True)
-    description = db.TextProperty(indexed=False, multiline=True)
-    editor = db.TextProperty(indexed=False, multiline=True)
+    characters = db.TextProperty(indexed=False)
+    description = db.TextProperty(indexed=False)
+    editor = db.TextProperty(indexed=False)
+    url = db.StringProperty(indexed=False)
 
 
 class MainPage(webapp2.RequestHandler):
@@ -69,12 +69,13 @@ class MainPageUser(webapp2.RequestHandler):
     def post(self): 
         self.story = Story(title=self.request.get('title'), 
                     author=self.request.get('author'), 
-                    url=self.request.get('link'), 
+                    link=self.request.get('link'), 
                     genre=self.request.get('genre'),
                     rating=self.request.get('rating'),
                     characters=self.request.get('characters'),
                     description=self.request.get('desc'),
-                    editor=self.request.get('editor')
+                    editor=self.request.get('editor'),
+                    url=self.request.get('url')
                     )
         self.story.put()
         self.redirect("/login/")

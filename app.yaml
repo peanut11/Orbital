@@ -16,6 +16,9 @@ handlers:
   script: unearth.app
   login: required
 
+- url: /genre/.*
+  script: genres.application
+
 - url: /.*
   script: unearth.app
 
