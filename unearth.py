@@ -77,6 +77,7 @@ class MainPageUser(webapp2.RequestHandler):
                     editor=self.request.get('editor')
                     )
         self.story.put()
+        self.redirect("/login/")
 
 class AboutUsUser(webapp2.RequestHandler):
 
