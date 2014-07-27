@@ -21,7 +21,6 @@ class Story(db.Model):
     characters = db.TextProperty(indexed=False)
     description = db.TextProperty(indexed=False)
     editor = db.TextProperty(indexed=False)
-    url = db.StringProperty(indexed=False)
 
 
 class MainPage(webapp2.RequestHandler):
@@ -75,7 +74,6 @@ class MainPageUser(webapp2.RequestHandler):
                     characters=self.request.get('characters'),
                     description=self.request.get('desc'),
                     editor=self.request.get('editor'),
-                    url=self.request.get('url'),
                     status=self.request.get('status')
                     )
         self.story.put()
