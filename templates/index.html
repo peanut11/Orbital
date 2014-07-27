@@ -33,60 +33,73 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
-				<p><a href="/login/">Log in with <img src="../images/google.png">  to view sidebar. </a></p>
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="jumbotron">
-							<p>Can't find good fanfictions online? Or ran out of good fanfictions to read?</p>
 
-							<p>UnearthWorks recommends only quality fanfictions. </p>
+				{% if user %}
+				<ul class="nav nav-sidebar">
+					<span> Welcome, {{ nickname }}. </span>
+					<li><a href="">Home</a></li>
+					<li><a href="/genre">Stories</a></li>
+					<li><a href="{{  logout  }}">Logout</a></li>
+				</ul>
+				{% else %}
+					<form action="/signin/">
+						<input type="submit" value="Login to Google">
+					</form>
+				{% endif %}
 
-							<p>Start searching for stories now! <a type="button" class="btn btn-primary" href="/genre">Get Started</a></p>
-						</div>
-					</div>
-					<div class="text-left col-md-3">
-						<div class="panel" id="Hall-of-Fame">
-							<a href="#" class="panel-title">Hall of Fame</a>
-							<ol>
-								<li><a href="">Top Story</a></li>
-								<li><a href="">One more nav</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-								<li><a href="">One more nav</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-								<li><a href="">One more nav</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-							</ol>
-						</div>
-						<div class="panel" id="Hall-of-Hell">
-							<a href="#" class="panel-title">Hall of Hell</a>
-							<ol>
-								<li><a href="">Most Horrible Story</a></li>
-								<li><a href="">Second most Horrible</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-								<li><a href="">One more nav</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-								<li><a href="">One more nav</a></li>
-								<li><a href="">Another nav item</a></li>
-								<li></li>
-							</ol>
-						</div>
-
-					</div>
 				</div>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="jumbotron">
+								<p>Can't find good fanfictions online? Or ran out of good fanfictions to read?</p>
+
+								<p>UnearthWorks recommends only quality fanfictions. </p>
+
+								<p>Start searching for stories now! <a type="button" class="btn btn-primary" href="/genre">Get Started</a></p>
+							</div>
+						</div>
+						<div class="text-left col-md-3">
+							<div class="panel" id="Hall-of-Fame">
+								<a href="#" class="panel-title">Hall of Fame</a>
+								<ol>
+									<li><a href="">Top Story</a></li>
+									<li><a href="">One more nav</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+									<li><a href="">One more nav</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+									<li><a href="">One more nav</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+								</ol>
+							</div>
+							<div class="panel" id="Hall-of-Hell">
+								<a href="#" class="panel-title">Hall of Hell</a>
+								<ol>
+									<li><a href="">Most Horrible Story</a></li>
+									<li><a href="">Second most Horrible</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+									<li><a href="">One more nav</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+									<li><a href="">One more nav</a></li>
+									<li><a href="">Another nav item</a></li>
+									<li></li>
+								</ol>
+							</div>
+
+						</div>
+					</div>
 
 
+				</div>
 			</div>
-		</div>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		
-	</body>
-	</html>
+			<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+			<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+			<script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+		</body>
+		</html>

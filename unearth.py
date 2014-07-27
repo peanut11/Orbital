@@ -26,43 +26,23 @@ class Story(db.Model):
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
-
-        template = JINJA_ENVIRONMENT.get_template('index.html')
-        self.response.write(template.render())
-
-
-class AboutUs(webapp2.RequestHandler):
-
-    def get(self):
-
-        template = JINJA_ENVIRONMENT.get_template('aboutus.html')
-        self.response.write(template.render())
-
-class Faq(webapp2.RequestHandler):
-
-    def get(self):
-
-        template = JINJA_ENVIRONMENT.get_template('faq.html')
-        self.response.write(template.render())
-
-class MainPageUser(webapp2.RequestHandler):
-
-    def get(self):
         user = users.get_current_user()
 
-        if user:  # signed in already
+        if user:
             template_values = {
                 'nickname': users.get_current_user().nickname(),
                 'logout': users.create_logout_url(self.request.host_url),
+                'user': users.get_current_user()
             }
-            template = JINJA_ENVIRONMENT.get_template('genrelogin.html')
+            template = JINJA_ENVIRONMENT.get_template('index.html')
 
-            if users.is_current_user_admin():
+            if users.is_current_user_admin():  # signed in already
                 template = JINJA_ENVIRONMENT.get_template('addstory.html')
             
             self.response.out.write(template.render(template_values))
         else:
-            self.redirect(self.request.host_url)
+            template = JINJA_ENVIRONMENT.get_template('index.html')
+            self.response.write(template.render())        
 
 
     def post(self): 
@@ -77,68 +57,70 @@ class MainPageUser(webapp2.RequestHandler):
                     status=self.request.get('status')
                     )
         self.story.put()
-        self.redirect("/login/")
+        self.redirect("/")
 
-class AboutUsUser(webapp2.RequestHandler):
+
+class AboutUs(webapp2.RequestHandler):
 
     def get(self):
         user = users.get_current_user()
-        if user:  # signed in already
+
+        if user:
             template_values = {
-            'nickname': users.get_current_user().nickname(),
-            'logout': users.create_logout_url(self.request.host_url),
+                'nickname': users.get_current_user().nickname(),
+                'logout': users.create_logout_url(self.request.host_url),
+                'user': users.get_current_user()
             }
-        
-            template = JINJA_ENVIRONMENT.get_template('aboutuslogin.html')
+            template = JINJA_ENVIRONMENT.get_template('aboutus.html')
             self.response.out.write(template.render(template_values))
         else:
-            self.redirect(self.request.host_url)
+            template = JINJA_ENVIRONMENT.get_template('aboutus.html')
+            self.response.write(template.render())  
 
-class FaqUser(webapp2.RequestHandler):
+class Faq(webapp2.RequestHandler):
 
     def get(self):
         user = users.get_current_user()
-        if user:  # signed in already
+
+        if user:
             template_values = {
-            'nickname': users.get_current_user().nickname(),
-            'logout': users.create_logout_url(self.request.host_url),
+                'nickname': users.get_current_user().nickname(),
+                'logout': users.create_logout_url(self.request.host_url),
+                'user': users.get_current_user()
             }
+            template = JINJA_ENVIRONMENT.get_template('faq.html')
             
-            template = JINJA_ENVIRONMENT.get_template('faqlogin.html')
             self.response.out.write(template.render(template_values))
         else:
-            self.redirect(self.request.host_url)
+            template = JINJA_ENVIRONMENT.get_template('faq.html')
+            self.response.write(template.render())  
 
 
 class GenrePage(webapp2.RequestHandler):
     
     def get(self):
-
-        template = JINJA_ENVIRONMENT.get_template('genre.html')
-        self.response.write(template.render())
-
-class GenrePageUser(webapp2.RequestHandler):
-
-    def get(self):
         user = users.get_current_user()
-        if user:  # signed in already
+
+        if user:
             template_values = {
-            'nickname': users.get_current_user().nickname(),
-            'logout': users.create_logout_url(self.request.host_url),
+                'nickname': users.get_current_user().nickname(),
+                'logout': users.create_logout_url(self.request.host_url),
+                'user': users.get_current_user()
             }
-        
-            template = JINJA_ENVIRONMENT.get_template('genrelogin.html')
+            template = JINJA_ENVIRONMENT.get_template('genre.html')
+            
             self.response.out.write(template.render(template_values))
         else:
-            self.redirect(self.request.host_url)
+            template = JINJA_ENVIRONMENT.get_template('genre.html')
+            self.response.write(template.render()) 
 
+class SignInHandler(webapp2.RequestHandler):
+    def get(self):
+        self.redirect(users.create_login_url(self.request.host_url))
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                 ('/aboutus', AboutUs),
                                ('/faq', Faq),
                                ('/genre', GenrePage),
-                               ('/login/', MainPageUser),
-                                ('/login/aboutus', AboutUsUser),
-                                ('/login/faq', FaqUser),
-                                ('/login/genre', GenrePageUser)],
+                               ('/signin/', SignInHandler)],
                                  debug=True)      
