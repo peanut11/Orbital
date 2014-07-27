@@ -22,7 +22,6 @@ class Story(db.Model):
     characters = db.TextProperty(indexed=False)
     description = db.TextProperty(indexed=False)
     editor = db.TextProperty(indexed=False)
-    date = db.DateTimeProperty()
 
 
 class MainPage(webapp2.RequestHandler):
