@@ -13,15 +13,15 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 class Story(db.Model):
-    title = db.StringProperty()
+    title = db.StringProperty(indexed=True)
     author = db.StringProperty(indexed=False)
     url = db.StringProperty(indexed=False)
-    genre = db.StringProperty()
-    rating = db.StringProperty()
-    status = db.StringProperty()
-    characters = db.TextProperty(indexed=False)
-    description = db.TextProperty(indexed=False)
-    editor = db.TextProperty(indexed=False)
+    genre = db.StringProperty(indexed=True)
+    rating = db.StringProperty(indexed=True)
+    status = db.StringProperty(indexed=True)
+    characters = db.TextProperty(indexed=False, multiline=True)
+    description = db.TextProperty(indexed=False, multiline=True)
+    editor = db.TextProperty(indexed=False, multiline=True)
 
 
 class MainPage(webapp2.RequestHandler):
