@@ -14,14 +14,14 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class Story(db.Model):
     title = db.StringProperty()
-    author = db.StringProperty()
-    url = db.StringProperty()
+    author = db.StringProperty(indexed=False)
+    url = db.StringProperty(indexed=False)
     genre = db.StringProperty()
     rating = db.StringProperty()
     status = db.StringProperty()
-    characters = db.TextProperty()
-    description = db.TextProperty()
-    editor = db.TextProperty()
+    characters = db.TextProperty(indexed=False)
+    description = db.TextProperty(indexed=False)
+    editor = db.TextProperty(indexed=False)
     date = db.DateTimeProperty()
 
 
@@ -131,12 +131,24 @@ class GenrePageUser(webapp2.RequestHandler):
             self.response.out.write(template.render(template_values))
         else:
             self.redirect(self.request.host_url)
+class StoryList(webapp2.RequestHandler):
 
+    def get(self):
+        query = Story.all()
+        query.order("-rating")
+
+        template_values = {
+        'query': query
+        }            
+
+        template = JINJA_ENVIRONMENT.get_template('storylist.html')
+        self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                 ('/aboutus', AboutUs),
                                ('/faq', Faq),
                                ('/genre', GenrePage),
+                               ('/storylist', StoryList),
                                ('/login/', MainPageUser),
                                 ('/login/aboutus', AboutUsUser),
                                 ('/login/faq', FaqUser),
