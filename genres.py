@@ -18,12 +18,14 @@ class Comedy(webapp2.RequestHandler):
 	
 	def get(self):
 
+		genre = "Comedy"
 		query = Story.all()
-		query.filter("genre = ", "Comedy")
+		query.filter("genre = ", genre)
 		query.order("-rating")
 
 		template_values = {
-		'query': query	
+		'query': query,
+		'genre': genre
 		}            
 
 		template = JINJA_ENVIRONMENT.get_template('storylist.html')
@@ -32,12 +34,15 @@ class Comedy(webapp2.RequestHandler):
 class SliceOfLife(webapp2.RequestHandler):
 
 	def get(self):
+
+		genre = "Slice of Life"
 		query = Story.all()
-		query.filter("genre = ", "Slice of Life")
+		query.filter("genre = ", genre)
 		query.order("-rating")
 
 		template_values = {
-		'query': query
+		'query': query,
+		'genre': genre
 		}            
 
 		template = JINJA_ENVIRONMENT.get_template('storylist.html')
@@ -47,13 +52,15 @@ class SliceOfLife(webapp2.RequestHandler):
 class Romance(webapp2.RequestHandler):
 
 	def get(self):
+		genre = "Romance"
 		query = Story.all()
-		query.filter("genre = ", "Romance")
+		query.filter("genre = ", genre)
 		query.order("-rating")
 
 		template_values = {
-		'query': query
-		}            
+		'query': query,
+		'genre': genre
+		}          
 
 		template = JINJA_ENVIRONMENT.get_template('storylist.html')
 		self.response.write(template.render(template_values))
